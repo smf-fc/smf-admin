@@ -1,27 +1,21 @@
 <h1 class="mat-h1">Check-in</h1>
 
+<mat-list style="width: 100%">
+  <div mat-subheader>Match</div>
+  <mat-list-item class="match-item">
+    <mat-icon mat-list-icon>folder</mat-icon>
+    <div mat-line>Name</div>
+    <div mat-line>Date</div>
+    <div mat-line>Time</div>
+    <div mat-line>Pitch</div>
+    <span class="example-spacer"></span>
+    <button mat-flat-button color="primary" class="join-button">Join</button>
+    <button mat-flat-button color="warn" class="join-button">Cancel</button>
+  </mat-list-item>
+</mat-list>
 
 <mat-grid-list cols="2" rowHeight="10rem">
-  <mat-grid-tile
-    [colspan]="2"
-    [rowspan]="1">
-    <mat-list style="width: 100%">
-      <div mat-subheader>Match</div>
-      <mat-list-item class="match-item">
-        <mat-icon mat-list-icon>folder</mat-icon>
-        <div mat-line>Name</div>
-        <div mat-line>Date</div>
-        <div mat-line>Time</div>
-        <div mat-line>Pitch</div>
-        <span class="example-spacer"></span>
-        <button mat-flat-button color="primary" class="join-button">Join</button>
-        <button mat-flat-button color="warn" class="join-button">Cancel</button>
-      </mat-list-item>
-    </mat-list>
-  </mat-grid-tile>
-  <mat-grid-tile
-    [colspan]="1"
-    [rowspan]="1">
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
     <mat-list>
       <div mat-subheader>Joined players</div>
       <mat-list-item>
@@ -34,9 +28,7 @@
       </mat-list-item>
     </mat-list>
   </mat-grid-tile>
-  <mat-grid-tile
-    [colspan]="1"
-    [rowspan]="1">
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
     <mat-list>
       <div mat-subheader>Cancel players</div>
       <mat-list-item>
