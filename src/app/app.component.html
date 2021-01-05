@@ -1,12 +1,10 @@
 <ng-container>
   <app-header></app-header>
-
   <mat-sidenav-container>
     <mat-sidenav #sidenav mode="side" opened [fixedInViewport]="true" fixedTopGap="64">
       <app-sidenav></app-sidenav>
     </mat-sidenav>
-
-    <mat-sidenav-content class="flex-container">
+    <mat-sidenav-content>
       <app-content></app-content>
       <app-footer></app-footer>
     </mat-sidenav-content>

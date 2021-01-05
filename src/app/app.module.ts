@@ -11,8 +11,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {HeaderModule} from './components/layout/header/header.module';
 import {FooterModule} from './components/layout/footer/footer.module';
 import {SidenavModule} from './components/layout/sidenav/sidenav.module';
-import { CheckInComponent } from './components/check-in/check-in.component';
-import { CashComponent } from './components/cash/cash.component';
+import {CashComponent} from './components/cash/cash.component';
+import {CheckInModule} from './components/check-in/check-in.module';
 
 
 @NgModule({
@@ -20,7 +20,6 @@ import { CashComponent } from './components/cash/cash.component';
     AppComponent,
     DashboardComponent,
     ContentComponent,
-    CheckInComponent,
     CashComponent,
   ],
   imports: [
@@ -32,6 +31,7 @@ import { CashComponent } from './components/cash/cash.component';
     HeaderModule,
     FooterModule,
     SidenavModule,
+    CheckInModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
