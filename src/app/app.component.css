@@ -1,0 +1,10 @@
+mat-sidenav {
+  width: 200px;
+}
+
+app-footer {
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+}
