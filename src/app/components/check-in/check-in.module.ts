@@ -6,6 +6,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {FlexModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatListModule,
     MatIconModule,
     MatButtonModule,
+    FlexModule,
   ]
 })
 export class CheckInModule {

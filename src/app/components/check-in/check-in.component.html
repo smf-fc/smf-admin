@@ -1,44 +1,44 @@
-<h1 class="mat-h1">Check-in</h1>
+<h1 class="mat-h1">Điểm danh</h1>
 
-<mat-list style="width: 100%">
-  <div mat-subheader>Match</div>
+<mat-list>
   <mat-list-item class="match-item">
     <mat-icon mat-list-icon>folder</mat-icon>
-    <div mat-line>Name</div>
-    <div mat-line>Date</div>
-    <div mat-line>Time</div>
-    <div mat-line>Pitch</div>
+    <div mat-line><span class="item match-name">Trận bóng nội bộ</span></div>
+    <div mat-line><span class="item">Sân bóng Trung Văn</span></div>
+    <div mat-line><span class="item">17/01/2020 - 19h</span></div>
     <span class="example-spacer"></span>
-    <button mat-flat-button color="primary" class="join-button">Join</button>
-    <button mat-flat-button color="warn" class="join-button">Cancel</button>
+    <button mat-flat-button color="primary" class="join-button">Tham gia</button>
+    <button mat-flat-button color="warn" class="join-button">Vắng</button>
   </mat-list-item>
 </mat-list>
 
-<mat-grid-list cols="2" rowHeight="10rem">
-  <mat-grid-tile [colspan]="1" [rowspan]="1">
-    <mat-list>
-      <div mat-subheader>Joined players</div>
-      <mat-list-item>
-        <mat-icon mat-list-icon>note</mat-icon>
-        <div mat-line>Đặng Quốc Nam</div>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon mat-list-icon>note</mat-icon>
-        <div mat-line>Đặng Quốc Nam</div>
-      </mat-list-item>
-    </mat-list>
-  </mat-grid-tile>
-  <mat-grid-tile [colspan]="1" [rowspan]="1">
-    <mat-list>
-      <div mat-subheader>Cancel players</div>
-      <mat-list-item>
-        <mat-icon mat-list-icon>note</mat-icon>
-        <div mat-line>Đặng Quốc Nam</div>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon mat-list-icon>note</mat-icon>
-        <div mat-line>Đặng Quốc Nam</div>
-      </mat-list-item>
-    </mat-list>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="bounds">
+  <div class="content" fxLayout="row" fxLayout.sm="column" fxFlexFill>
+    <div fxFlex="50" class="sec1">
+      <mat-list>
+        <div mat-subheader>Tham gia (2)</div>
+        <mat-list-item>
+          <mat-icon mat-list-icon>note</mat-icon>
+          <div mat-line>Đặng Quốc Nam</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>note</mat-icon>
+          <div mat-line>Đặng Quốc Nam</div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div fxFlex="50" class="sec2">
+      <mat-list>
+        <div mat-subheader>Vắng (2)</div>
+        <mat-list-item>
+          <mat-icon mat-list-icon>note</mat-icon>
+          <div mat-line>Đặng Quốc Nam</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>note</mat-icon>
+          <div mat-line>Đặng Quốc Nam</div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>
