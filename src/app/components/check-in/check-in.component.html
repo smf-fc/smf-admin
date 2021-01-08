@@ -16,7 +16,7 @@
   <div class="content" fxLayout="row" fxLayout.sm="column" fxFlexFill>
     <div fxFlex="50" class="sec1">
       <mat-list>
-        <div mat-subheader>Tham gia (2)</div>
+        <div mat-subheader>Tham gia ({{countJoin}})</div>
         <div *ngFor="let checkin of checkins">
           <mat-list-item *ngIf="checkin.wasJoin===true">
             <mat-icon mat-list-icon>note</mat-icon>
@@ -27,7 +27,7 @@
     </div>
     <div fxFlex="50" class="sec2">
       <mat-list>
-        <div mat-subheader>Vắng (2)</div>
+        <div mat-subheader>Vắng ({{countReject}})</div>
         <div *ngFor="let checkin of checkins">
           <mat-list-item *ngIf="checkin.wasJoin===false">
             <mat-icon mat-list-icon>note</mat-icon>

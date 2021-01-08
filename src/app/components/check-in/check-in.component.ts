@@ -10,6 +10,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class CheckInComponent implements OnInit {
   checkins: Array<CheckInModel>;
+  countJoin: number;
+  countReject: number;
   matchId: number;
 
   constructor(private route: ActivatedRoute) {
@@ -22,6 +24,8 @@ export class CheckInComponent implements OnInit {
 
   loadCheckins = async () => {
     this.checkins = await getCheckinByMatchId(this.matchId);
+    this.countJoin = this.checkins.filter(item => true === item.wasJoin).length;
+    this.countReject = this.checkins.length - this.countJoin;
     console.log(this.checkins);
   };
 

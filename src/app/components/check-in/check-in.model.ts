@@ -5,5 +5,5 @@ export interface CheckInModel {
     name: string;
     number: number;
   };
-  wasJoin: false;
+  wasJoin: boolean;
 }
