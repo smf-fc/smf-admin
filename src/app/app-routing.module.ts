@@ -14,7 +14,7 @@ const routes: Routes = [
     component: DashboardComponent,
   },
   {
-    path: 'check-in',
+    path: 'check-in/:id',
     component: CheckInComponent,
   },
   {

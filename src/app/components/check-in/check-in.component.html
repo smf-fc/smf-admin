@@ -7,8 +7,8 @@
     <div mat-line><span class="item">Sân bóng Trung Văn</span></div>
     <div mat-line><span class="item">17/01/2020 - 19h</span></div>
     <span class="example-spacer"></span>
-    <button mat-flat-button color="primary" class="join-button">Tham gia</button>
-    <button mat-flat-button color="warn" class="join-button">Vắng</button>
+    <button mat-flat-button color="primary" class="join-button" (click)="checkIn(true)">Tham gia</button>
+    <button mat-flat-button color="warn" class="join-button" (click)="checkIn(false)">Vắng</button>
   </mat-list-item>
 </mat-list>
 
@@ -17,27 +17,23 @@
     <div fxFlex="50" class="sec1">
       <mat-list>
         <div mat-subheader>Tham gia (2)</div>
-        <mat-list-item>
-          <mat-icon mat-list-icon>note</mat-icon>
-          <div mat-line>Đặng Quốc Nam</div>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon mat-list-icon>note</mat-icon>
-          <div mat-line>Đặng Quốc Nam</div>
-        </mat-list-item>
+        <div *ngFor="let checkin of checkins">
+          <mat-list-item *ngIf="checkin.wasJoin===true">
+            <mat-icon mat-list-icon>note</mat-icon>
+            <div mat-line>{{checkin.player.name}}</div>
+          </mat-list-item>
+        </div>
       </mat-list>
     </div>
     <div fxFlex="50" class="sec2">
       <mat-list>
         <div mat-subheader>Vắng (2)</div>
-        <mat-list-item>
-          <mat-icon mat-list-icon>note</mat-icon>
-          <div mat-line>Đặng Quốc Nam</div>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon mat-list-icon>note</mat-icon>
-          <div mat-line>Đặng Quốc Nam</div>
-        </mat-list-item>
+        <div *ngFor="let checkin of checkins">
+          <mat-list-item *ngIf="checkin.wasJoin===false">
+            <mat-icon mat-list-icon>note</mat-icon>
+            <div mat-line>{{checkin.player.name}}</div>
+          </mat-list-item>
+        </div>
       </mat-list>
     </div>
   </div>
