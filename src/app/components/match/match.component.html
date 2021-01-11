@@ -5,9 +5,20 @@
     <mat-icon mat-list-icon>folder</mat-icon>
     <div mat-line><span class="item match-name">Trận bóng nội bộ {{match.id}}</span></div>
     <div mat-line><span class="item">{{match.pitch.name}} - {{match.pitch.address}}</span></div>
-    <div mat-line><span class="item">{{match.dateTime}}</span></div>
+    <div mat-line><span
+      class="item">{{dateFormat(match.dateTime)}}</span>
+    </div>
     <span class="example-spacer"></span>
-    <button mat-flat-button color="primary" class="join-button" [routerLink]="['/check-in',match.id]">Điểm danh
+    <button *ngIf="match.status==='OPEN_CHECK_IN'" mat-flat-button color="primary" class="join-button"
+            [routerLink]="['/check-in',match.id]">Điểm danh
+    </button>
+    <button *ngIf="match.status==='CLOSE_CHECK_IN'" mat-flat-button color="primary" class="join-button" disabled>Chốt
+      danh sách
+    </button>
+    <button *ngIf="match.status==='FINISH'" mat-flat-button color="primary" class="join-button" disabled>Đã
+      thi đấu
+    </button>
+    <button *ngIf="match.status==='CANCEL'" mat-flat-button color="primary" class="join-button" disabled>Huỷ
     </button>
   </mat-list-item>
   <mat-paginator [length]="total"

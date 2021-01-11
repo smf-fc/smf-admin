@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MatchModel} from './match.model';
 import {getAll} from '../../common/match.api';
 import {PageEvent} from '@angular/material/paginator';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-match',
@@ -35,5 +36,9 @@ export class MatchComponent implements OnInit {
         console.log(response);
       }
     ).catch(err => console.log(err));
+  };
+
+  dateFormat = (value) => {
+    return formatDate(value, 'dd-MM-yyy HH:mm', 'en-US', '');
   };
 }

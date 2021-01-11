@@ -4,6 +4,7 @@ import {checkIn, getCheckinByMatchId} from '../../common/check-in.api';
 import {ActivatedRoute} from '@angular/router';
 import {MatchModel} from '../match/match.model';
 import {get} from '../../common/match.api';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-check-in',
@@ -48,5 +49,9 @@ export class CheckInComponent implements OnInit {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  dateFormat = (value) => {
+    return formatDate(value, 'dd-MM-yyy HH:mm', 'en-US', '');
   };
 }
