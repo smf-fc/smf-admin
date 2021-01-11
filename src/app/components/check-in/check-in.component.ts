@@ -5,6 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {MatchModel} from '../match/match.model';
 import {get} from '../../common/match.api';
 import {formatDate} from '@angular/common';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-check-in',
@@ -18,7 +19,7 @@ export class CheckInComponent implements OnInit {
   match: MatchModel;
   matchId: number;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private snackBar: MatSnackBar) {
     this.matchId = Number(route.snapshot.paramMap.get('id'));
   }
 
@@ -45,13 +46,23 @@ export class CheckInComponent implements OnInit {
   checkIn = (wasJoin: boolean) => {
     checkIn(1, this.match.id, wasJoin).then(async () => {
       await this.loadCheckins();
+      this.openSnackBar('Điểm danh thành công.', '');
     })
       .catch((err) => {
         console.log(err);
+        this.openSnackBar('Điểm danh thất bại.', '');
       });
   };
 
   dateFormat = (value) => {
     return formatDate(value, 'dd-MM-yyy HH:mm', 'en-US', '');
+  };
+
+  openSnackBar = (message: string, closeText: string) => {
+    this.snackBar.open(message, closeText, {
+      duration: 2000,
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom',
+    });
   };
 }

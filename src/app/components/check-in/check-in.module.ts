@@ -7,6 +7,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {FlexModule} from '@angular/flex-layout';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {FlexModule} from '@angular/flex-layout';
     MatIconModule,
     MatButtonModule,
     FlexModule,
+    MatSnackBarModule
   ]
 })
 export class CheckInModule {
