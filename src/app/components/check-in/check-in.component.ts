@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {CheckInModel} from './check-in.model';
-import {checkIn, getCheckinByMatchId} from '../../common/api';
+import {checkIn, getCheckinByMatchId} from '../../common/check-in.api';
 import {ActivatedRoute} from '@angular/router';
+import {MatchModel} from '../match/match.model';
+import {get} from '../../common/match.api';
 
 @Component({
   selector: 'app-check-in',
@@ -12,6 +14,7 @@ export class CheckInComponent implements OnInit {
   checkins: Array<CheckInModel>;
   countJoin: number;
   countReject: number;
+  match: MatchModel;
   matchId: number;
 
   constructor(private route: ActivatedRoute) {
@@ -20,7 +23,16 @@ export class CheckInComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.loadCheckins();
+    this.getMatch();
   }
+
+  getMatch = () => {
+    get(this.matchId).then(response => {
+      this.match = response;
+    }).catch(error => {
+      console.log(error);
+    });
+  };
 
   loadCheckins = async () => {
     this.checkins = await getCheckinByMatchId(this.matchId);
@@ -29,8 +41,8 @@ export class CheckInComponent implements OnInit {
     console.log(this.checkins);
   };
 
-  checkIn = (value) => {
-    checkIn(value).then(async () => {
+  checkIn = (wasJoin: boolean) => {
+    checkIn(1, this.match.id, wasJoin).then(async () => {
       await this.loadCheckins();
     })
       .catch((err) => {

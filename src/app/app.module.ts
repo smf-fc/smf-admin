@@ -13,6 +13,7 @@ import {FooterModule} from './components/layout/footer/footer.module';
 import {SidenavModule} from './components/layout/sidenav/sidenav.module';
 import {CashComponent} from './components/cash/cash.component';
 import {CheckInModule} from './components/check-in/check-in.module';
+import {MatchModule} from './components/match/match.module';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {CheckInModule} from './components/check-in/check-in.module';
     FooterModule,
     SidenavModule,
     CheckInModule,
+    MatchModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

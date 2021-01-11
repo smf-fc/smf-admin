@@ -1,0 +1,18 @@
+<h1 class="mat-h1">Điểm danh</h1>
+
+<mat-list>
+  <mat-list-item class="match-item" *ngFor="let match of matches">
+    <mat-icon mat-list-icon>folder</mat-icon>
+    <div mat-line><span class="item match-name">Trận bóng nội bộ {{match.id}}</span></div>
+    <div mat-line><span class="item">{{match.pitch.name}} - {{match.pitch.address}}</span></div>
+    <div mat-line><span class="item">{{match.dateTime}}</span></div>
+    <span class="example-spacer"></span>
+    <button mat-flat-button color="primary" class="join-button" [routerLink]="['/check-in',match.id]">Điểm danh
+    </button>
+  </mat-list-item>
+  <mat-paginator [length]="total"
+                 [pageSize]="size"
+                 [pageSizeOptions]="options"
+                 (page)="pageEvent = getDataServer($event)">
+  </mat-paginator>
+</mat-list>

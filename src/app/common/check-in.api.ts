@@ -20,15 +20,15 @@ export const getAllCheckIn = async () => {
     });
 };
 
-export const checkIn = async (value) => {
+export const checkIn = async (playerId: number, matchId: number, wasJoin: boolean) => {
   return await axios.post('http://localhost:8080/checkins', {
     player: {
-      id: 1
+      id: playerId
     },
     match: {
-      id: 1
+      id: matchId
     },
-    wasJoin: value
+    wasJoin
   })
     .then(response => {
       return response.data.content;

@@ -4,8 +4,8 @@
   <mat-list-item class="match-item">
     <mat-icon mat-list-icon>folder</mat-icon>
     <div mat-line><span class="item match-name">Trận bóng nội bộ</span></div>
-    <div mat-line><span class="item">Sân bóng Trung Văn</span></div>
-    <div mat-line><span class="item">17/01/2020 - 19h</span></div>
+    <div mat-line><span class="item">{{match.pitch.name}} - {{match.pitch.address}}</span></div>
+    <div mat-line><span class="item">{{match.dateTime}}</span></div>
     <span class="example-spacer"></span>
     <button mat-flat-button color="primary" class="join-button" (click)="checkIn(true)">Tham gia</button>
     <button mat-flat-button color="warn" class="join-button" (click)="checkIn(false)">Vắng</button>
