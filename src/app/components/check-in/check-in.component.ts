@@ -21,11 +21,11 @@ export class CheckInComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private snackBar: MatSnackBar) {
     this.matchId = Number(route.snapshot.paramMap.get('id'));
+    this.getMatch();
   }
 
   async ngOnInit(): Promise<void> {
     await this.loadCheckins();
-    this.getMatch();
   }
 
   getMatch = () => {

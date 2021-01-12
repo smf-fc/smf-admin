@@ -1,0 +1,4 @@
+<span *ngIf="auth.isAuthenticated$ | async; else loggedOut"></span>
+<ng-template #loggedOut>
+  <button mat-flat-button color="primary" (click)="auth.loginWithRedirect()">Log in</button>
+</ng-template>

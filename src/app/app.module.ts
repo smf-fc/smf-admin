@@ -14,6 +14,7 @@ import {SidenavModule} from './components/layout/sidenav/sidenav.module';
 import {CashComponent} from './components/cash/cash.component';
 import {CheckInModule} from './components/check-in/check-in.module';
 import {MatchModule} from './components/match/match.module';
+import {AuthModule} from '@auth0/auth0-angular';
 
 
 @NgModule({
@@ -24,6 +25,10 @@ import {MatchModule} from './components/match/match.module';
     CashComponent,
   ],
   imports: [
+    AuthModule.forRoot({
+      domain: 'smf.us.auth0.com',
+      clientId: '4uZ6GyeSUROUdjNH6HAoQ7uBEoQ5tdb3'
+    }),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
