@@ -7,8 +7,16 @@
     <div mat-line><span class="item">{{match.pitch.name}} - {{match.pitch.address}}</span></div>
     <div mat-line><span class="item">{{dateFormat(match.dateTime)}}</span></div>
     <span class="example-spacer"></span>
-    <button mat-flat-button color="primary" class="join-button" (click)="checkIn(true)">Tham gia</button>
-    <button mat-flat-button color="warn" class="join-button" (click)="checkIn(false)">Vắng</button>
+
+    <button *ngIf="match.status==='OPEN_CHECK_IN'" mat-flat-button color="primary" class="join-button"
+            (click)="checkIn(true)">Tham gia
+    </button>
+    <button *ngIf="match.status==='OPEN_CHECK_IN'" mat-flat-button color="warn" class="join-button"
+            (click)="checkIn(false)">Vắng
+    </button>
+    <div *ngIf="match.status==='CLOSE_CHECK_IN'" class="close-checkin"> ĐÓNG ĐIỂM DANH</div>
+    <div *ngIf="match.status==='FINISH'" class="finish">ĐÃ THI ĐẤU</div>
+    <div *ngIf="match.status==='CANCEL'" class="cancel">HUỶ</div>
   </mat-list-item>
 </mat-list>
 
